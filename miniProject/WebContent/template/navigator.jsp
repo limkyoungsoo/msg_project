@@ -20,9 +20,9 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="index.jsp">Home</a></li>
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">검색할 장소를 눌러주세요 !<span class="caret"></span></a>
+					data-toggle="dropdown" href="#">검색할 장소를 눌러주세요 !<span
+						class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">유스페이스</a></li>
 						<li><a href="#">H스퀘어</a></li>

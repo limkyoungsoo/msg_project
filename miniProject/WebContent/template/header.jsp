@@ -5,6 +5,5 @@
 		color="white">회원가입</font></a>
 
 </div>
-<div class="brand">Business Casual</div>
-<div class="address-bar">3481 Melrose Place | Beverly Hills, CA
-	90210 | 123.456.7890</div>
+<div class="brand">Menu Selector Guide</div>
+<div class="address-bar">김성환, 김지원, 강정호, 이현근, 임경수, 한지선</div>

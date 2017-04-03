@@ -76,10 +76,10 @@
 					<h2 class="brand-before">
 						<small>Welcome to</small>
 					</h2>
-					<h1 class="brand-name">Business Casual</h1>
+					<h1 class="brand-name">Menu Selector Guide</h1>
 					<hr class="tagline-divider">
 					<h2>
-						<small>By <strong>Start Bootstrap</strong>
+						<small>By <strong>Java로 Job아라</strong>
 						</small>
 					</h2>
 				</div>
@@ -102,7 +102,7 @@
 		//changes the speed
 		})
 	</script>
-
+<c:import url="template/footer.jsp"></c:import>
 </body>
 
 </html>
