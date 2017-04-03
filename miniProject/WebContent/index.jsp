@@ -86,7 +86,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- /.container -->
+	<!-- /.container  .. -->
 
 
 	<!-- jQuery -->
