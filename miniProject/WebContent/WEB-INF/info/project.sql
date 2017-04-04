@@ -65,6 +65,12 @@ select * from msgMember;
 insert into store(storeName,storeLoc,storeTel,storePic,openHour)
 values('쭈꾸미볶음집','유스페이스1동',03112345678,'store.jpg','월요일~금요일 10시~8시');
 select * from store;
+select storePic from store
+
+insert into store(storeName,storeLoc,storeTel,storePic,openHour)
+values('소바니','유스페이스1동',031,'/storeImg/so1.jpg','월요일~금요일 10시~8시');
+
+update store set storePic='/storeImg/cho1.jpg';
 
 insert into menu(menuNo,storeName,menuName,menuPrice,menuPic)
 values(menuNo_seq.nextval,'쭈꾸미볶음집','쭈꾸미불볶음',6000,'/dish.jpg');
