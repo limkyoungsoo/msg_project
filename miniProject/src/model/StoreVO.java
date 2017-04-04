@@ -1,35 +1,31 @@
 package model;
 
 public class StoreVO {
-	// create table store(
-	// storeName varchar2(100) primary key,
-	// storeLoc varchar2(100) not null,
-	// storeTel number not null,
-	// storePic varchar2(100) not null,
-	// openHour varchar2(100) not null
-	// );
 	private String storeName;
 	private String storeLoc;
-	private String number;
+	private int storeTel;
 	private String storePic;
 	private String openHour;
+	private MenuVO menuVO;
 
 	public StoreVO() {
 		super();
 	}
 
-	public StoreVO(String storePic) {
-		super();
-		this.storePic = storePic;
-	}
-
-	public StoreVO(String storeName, String storeLoc, String number, String storePic, String openHour) {
+	public StoreVO(String storeName, String storeLoc, int storeTel, String storePic, String openHour, MenuVO menuVO) {
 		super();
 		this.storeName = storeName;
 		this.storeLoc = storeLoc;
-		this.number = number;
+		this.storeTel = storeTel;
 		this.storePic = storePic;
 		this.openHour = openHour;
+		this.menuVO = menuVO;
+	}
+
+	public StoreVO(String storeName, String storePic) {
+		super();
+		this.storeName = storeName;
+		this.storePic = storePic;
 	}
 
 	public String getStoreName() {
@@ -48,19 +44,19 @@ public class StoreVO {
 		this.storeLoc = storeLoc;
 	}
 
-	public String getNumber() {
-		return number;
+	public int getStoreTel() {
+		return storeTel;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
+	public void setStoreTel(int storeTel) {
+		this.storeTel = storeTel;
 	}
 
-	public String getstorePic() {
+	public String getStorePic() {
 		return storePic;
 	}
 
-	public void setstorePic(String storePic) {
+	public void setStorePic(String storePic) {
 		this.storePic = storePic;
 	}
 
@@ -72,10 +68,17 @@ public class StoreVO {
 		this.openHour = openHour;
 	}
 
-	@Override
-	public String toString() {
-		return "StoreVO [storeName=" + storeName + ", storeLoc=" + storeLoc + ", number=" + number + ", storePic="
-				+ storePic + ", openHour=" + openHour + "]";
+	public MenuVO getMenuVO() {
+		return menuVO;
 	}
 
+	public void setMenuVO(MenuVO menuVO) {
+		this.menuVO = menuVO;
+	}
+
+	@Override
+	public String toString() {
+		return "StoreVO [storeName=" + storeName + ", storeLoc=" + storeLoc + ", storeTel=" + storeTel + ", storePic="
+				+ storePic + ", openHour=" + openHour + ", menuVO=" + menuVO + "]";
+	}
 }

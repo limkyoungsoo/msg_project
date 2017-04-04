@@ -32,12 +32,12 @@ public class StoreDAO {
 		try {
 			con = getConnection();
 			// select * from store;
-			String sql = "select storePic from store";
+			String sql = "select storeName, storePic from store";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				storeList.add(new StoreVO(rs.getString(1)));
+				storeList.add(new StoreVO(rs.getString(1),rs.getString(2)));
 			}
 		} finally {
 			closeAll(rs, pstmt, con);
