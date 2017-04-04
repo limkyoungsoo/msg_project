@@ -4,39 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title>MSG - MiniProject</title>
-
-<!-- Bootstrap Core CSS -->
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="bootstrap/css/business-casual.css" rel="stylesheet">
-
-<!-- Fonts -->
-<link
-	href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
-	rel="stylesheet" type="text/css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<c:import url="/template/straplink.html"></c:import>
 </head>
 
 <body>
 	<c:import url="/template/header.jsp"></c:import>
 	<c:import url="/template/navigator.jsp"></c:import>
+	<c:set value="${requestScope.storeList }" var="list" />
 	<div class="container">
 		<div class="row">
 			<div class="box">
@@ -46,23 +20,27 @@
 						<ol class="carousel-indicators hidden-xs">
 							<li data-target="#carousel-example-generic" data-slide-to="0"
 								class="active"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							<c:forEach items="${list }" var="p" varStatus="order">
+								<li data-target="#carousel-example-generic"
+									data-slide-to="${order.count}"></li>
+							</c:forEach>
 						</ol>
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
 							<div class="item active">
-								<img class="img-responsive img-full"
-									src="bootstrap/img/slide-1.jpg" alt="">
+								<img class="img-responsive img-border"
+									src="${pageContext.request.contextPath}/${list[0].storePic}"
+									alt="">
 							</div>
-							<div class="item">
-								<img class="img-responsive img-full"
-									src="bootstrap/img/slide-2.jpg" alt="">
-							</div>
-							<div class="item">
-								<img class="img-responsive img-full"
-									src="bootstrap/img/slide-3.jpg" alt="">
-							</div>
+							<c:forEach items="${list }" var="b" varStatus="order">
+								<c:if test="${order.count != 1 }">
+									<div class="item">
+										<img class="img-responsive img-border"
+											src="${pageContext.request.contextPath}/${b.storePic }"
+											alt="">
+									</div>
+								</c:if>
+							</c:forEach>
 						</div>
 
 						<!-- Controls -->
@@ -102,7 +80,7 @@
 		//changes the speed
 		})
 	</script>
-<c:import url="template/footer.jsp"></c:import>
+	<c:import url="template/footer.jsp"></c:import>
 </body>
 
 </html>
