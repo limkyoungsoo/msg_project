@@ -10,7 +10,6 @@ public class DetailStoreController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
 		String storeName=request.getParameter("storeName");
 		StoreVO storeVO=StoreDAO.getInstance().getStoreMenuList(storeName);
 		request.setAttribute("menuList", storeVO);

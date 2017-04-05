@@ -171,48 +171,37 @@
 	font: bold 18px Helvetica, Arial, sans-serif;
 	vertical-align: middle;
 }
+
+
+img.img-responsive.img-border-left.img-rounded {
+    margin: auto;
+}
 /*별 CSS 끝  */
+
+/*오버레이 css 코드*/
+
 </style>
 </head>
 
 <body>
 
-	<div class="brand">Menu Selector Guide(Jake)</div>
-	<div class="address-bar">3481 Melrose Place | Beverly Hills, CA
-		90210 | 123.456.7890</div>
-
 	<!-- Navigation -->
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-				<a class="navbar-brand" href="index.html">Business Casual</a>
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container -->
-	</nav>
-
+	<c:import url="/template/header.jsp"></c:import>
+	<c:import url="/template/navigator.jsp"></c:import>
+	
 	<div class="container">
-
-<<<<<<< HEAD
+		<div class="row">
+			<div class="box">
+				<div class="col-lg-12">
+					<hr>
+						<h2 class="text-center">${requestScope.menuList.storeName}</h2>
+					<hr>
+						<img class="img-responsive img-border-left img-rounded img-hover" src="${pageContext.request.contextPath }/storeImg/cho1.jpg" 
+                    alt="${requestScope.menuList.storeName}" align="center" >
+				</div>	
+			</div>
+		</div>
+	
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
@@ -223,7 +212,8 @@
                     <hr>
                 </div>
                 <div class="col-md-6">
-                    <img class="img-responsive img-border-left" src="${pageContext.request.contextPath }/menuImg/jo3.jpg" alt="">
+                    <img class="img-responsive img-border-left img-rounded" src="${pageContext.request.contextPath }/menuImg/jo3.jpg" 
+                    alt="${requestScope.menuList.menuVO.menuName}" width="304" height="236">
                 </div>
                 <div class="col-md-6">
                     <p><strong>메뉴번호</strong>:${requestScope.menuList.menuVO.menuNo}</p>
@@ -234,70 +224,25 @@
                 <div class="clearfix"></div>
             </div>
         </div>
-=======
 		<div class="row">
 			<div class="box">
 				<div class="col-lg-12">
 					<hr>
 					<h2 class="intro-text text-center">
-						About <strong>business casual</strong>
+						<strong>${requestScope.menuList.storeName}</strong>의 다른 메뉴
 					</h2>
 					<hr>
 				</div>
-				<div class="col-md-6">
-					<img class="img-responsive img-border-left"
-						src="${pageContext.request.contextPath}/bootstrap/img/ha2.jpg"
-						alt="">
-				</div>
-				<div class="col-md-6">
-					<p>This is a great place to introduce your company or project
-						and describe what you do.</p>
-					<p>Lid est laborum dolo rumes fugats untras. Etharums ser
-						quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima
-						rerums unsers sadips amets.</p>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit
-						voluptatem accusantium doloremque laudantium, totam rem aperiam,
-						eaque ipsa quae ab illo inventore veritatis et quasi architecto
-						beatae vitae dicta sunt explicabo.</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
->>>>>>> branch 'master' of https://github.com/limkyoungsoo/msg_project.git
-
-		<div class="row">
-			<div class="box">
-				<div class="col-lg-12">
-					<hr>
-					<h2 class="intro-text text-center">
-						Our <strong>Team</strong>
-					</h2>
-					<hr>
-				</div>
+				<c:forEach items="${requestScope.menuList}" var="menu">
 				<div class="col-sm-4 text-center">
 					<img class="img-responsive"
-						src="${pageContext.request.contextPath}/bootstrap/img/ha3.jpg"
-						alt="">
+						src="${pageContext.request.contextPath}${menu.storePic}"
+						alt="" >
 					<h3>
 						John Smith <small>Job Title</small>
 					</h3>
 				</div>
-				<div class="col-sm-4 text-center">
-					<img class="img-responsive"
-						src="${pageContext.request.contextPath}/bootstrap/img/ha4.jpg"
-						alt="">
-					<h3>
-						John Smith <small>Job Title</small>
-					</h3>
-				</div>
-				<div class="col-sm-4 text-center">
-					<img class="img-responsive"
-						src="${pageContext.request.contextPath}/bootstrap/img/rak2.jpg"
-						alt="">
-					<h3>
-						John Smith <small>Job Title</small>
-					</h3>
-				</div>
+				</c:forEach>
 				<div class="clearfix"></div>
 			</div>
 		</div>
