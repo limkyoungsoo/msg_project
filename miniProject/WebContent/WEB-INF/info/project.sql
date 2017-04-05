@@ -19,7 +19,7 @@ create table msgMember(
 create table store(
  storeName varchar2(100) primary key,
  storeLoc varchar2(100) not null,
- storeTel number not null,
+ storeTel varchar2(100) not null,
  storePic varchar2(100) not null,
  openHour varchar2(100) not null
 );
