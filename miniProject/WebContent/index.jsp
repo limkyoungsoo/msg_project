@@ -4,13 +4,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <c:import url="/template/straplink.html"></c:import>
 <script type="text/javascript">
-	$(document).ready(function() {
-		$(".imgHover").on("click","img",function() {
-			alert("하잇");
-		});
-	});
+	$(document)
+			.ready(
+					function() {
+						$(".item")
+								.on(
+										"click",
+										"img",
+										function() {
+											location.href = "${pageContext.request.contextPath}/DispatcherServlet?command=detailStore&storeName="
+													+ $(this).attr('alt');
+											//alert($(this).attr('alt'));
+										});
+					});
 </script>
 </head>
 <body>
@@ -31,19 +40,23 @@
 									data-slide-to="${order.count}"></li>
 							</c:forEach>
 						</ol>
+
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
-							<div class="item active imgHover" >
+							<!-- 		<div class="view overlay hm-green-slight"> -->
+							<div class="item active">
 								<img class="img-responsive img-border"
 									src="${pageContext.request.contextPath}/${list[0].storePic}"
-									alt="">
+									alt="${list[0].storeName }">
 							</div>
+
+
 							<c:forEach items="${list }" var="b" varStatus="order">
 								<c:if test="${order.count != 1 }">
-									<div class="item imgHover">
-										<img class="img-responsive img-border imgHover"
+									<div class="item">
+										<img class="img-responsive img-border"
 											src="${pageContext.request.contextPath}/${b.storePic }"
-											alt="">
+											alt="${b.storeName }">
 									</div>
 								</c:if>
 							</c:forEach>

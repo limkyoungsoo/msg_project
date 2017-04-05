@@ -3,7 +3,7 @@ package model;
 public class StoreVO {
 	private String storeName;
 	private String storeLoc;
-	private int storeTel;
+	private String storeTel;
 	private String storePic;
 	private String openHour;
 	private MenuVO menuVO;
@@ -12,7 +12,8 @@ public class StoreVO {
 		super();
 	}
 
-	public StoreVO(String storeName, String storeLoc, int storeTel, String storePic, String openHour, MenuVO menuVO) {
+	public StoreVO(String storeName, String storeLoc, String storeTel, String storePic, String openHour,
+			MenuVO menuVO) {
 		super();
 		this.storeName = storeName;
 		this.storeLoc = storeLoc;
@@ -44,11 +45,11 @@ public class StoreVO {
 		this.storeLoc = storeLoc;
 	}
 
-	public int getStoreTel() {
+	public String getStoreTel() {
 		return storeTel;
 	}
 
-	public void setStoreTel(int storeTel) {
+	public void setStoreTel(String storeTel) {
 		this.storeTel = storeTel;
 	}
 
