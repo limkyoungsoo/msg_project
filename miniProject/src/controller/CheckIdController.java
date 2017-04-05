@@ -7,7 +7,7 @@ public class CheckIdController implements Controller {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String url = "/board/checkId.jsp";
+		String url = "board/checkId.jsp";
 		return null;
 	}
 
