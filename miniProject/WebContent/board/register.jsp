@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>bootstrap template</title>
+    <title>회원가입</title>
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,7 @@
     <script type="text/javascript">
     $(document).ready(function(){
     	$("#checkBtn").click(function(){
+    		location.href = "/DispatcherServlet/command=checkId";
 				alert('12345');
 		});
 	});
