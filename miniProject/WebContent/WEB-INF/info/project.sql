@@ -64,6 +64,10 @@ select * from msgMember;
 
 insert into store(storeName,storeLoc,storeTel,storePic,openHour)
 values('쭈꾸미볶음집','유스페이스1동',03112345678,'store.jpg','월요일~금요일 10시~8시');
+-- 위에 입력한 데이터 storeTel의 번호가 너무 길어서 '숫자 오버플로우' 라는 에러가 뜸
+-- 그래서 번호를 수정하려고 업데이트 하려고함. -강정호-
+update store set storeTel=031 where storeName='쭈꾸미볶음집';
+
 select * from store;
 select storePic from store
 
@@ -83,3 +87,20 @@ select * from menuReview;
 insert into msgMemberMenu(menuNo, mId) values(1,'java');
 select * from msgMemberMenu m, menu n where m.menuNo = n.menuNo;
 commit
+
+select s.storeLoc, s.storeTel, s.storePic, s.openHour,m.menuNo, m.menuName, m.menuPrice, m.menuPic 
+from store s, menu m where s.storeName=m.storeName and m.storeName='쭈꾸미볶음집';
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
