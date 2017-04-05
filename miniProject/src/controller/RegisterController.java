@@ -9,7 +9,7 @@ public class RegisterController implements Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		String url = "../member/register.jsp";
-		
+		System.out.println("유알엘"+url);
 		
 		return url;
 	}
