@@ -45,7 +45,11 @@ public class DispatcherServlet extends HttpServlet {
 			String command=request.getParameter("command");
 			System.out.println("check"+command);
 			Controller c=HandlerMapping.getInstance().create(command);
+			System.out.println("컨트롤러"+c);
+			
 			String url=c.execute(request, response);			
+			System.out.println("유알엘"+url);
+			
 			if(url.startsWith("redirect:"))
 				response.sendRedirect(url.substring(9));
 			else
