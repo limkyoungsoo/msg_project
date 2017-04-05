@@ -41,10 +41,9 @@
                 </div>
                 <!-- list.jsp에서 detailStore.jsp로 넘어가는지 단위 테스트 해봄 "강정호"-->
                        <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="${pageContext.request.contextPath }/menuImg/jo3.jpg" alt="">
-                    <a href="${pageContext.request.contextPath}/DispatcherServlet?command=detailStore&storeName=쭈꾸미볶음집"><h3>쭈꾸미볶음
-                        <small>Test해봄-강정호-</small>
-                    </h3></a>
+                    
+                    <a href="${pageContext.request.contextPath}/DispatcherServlet?command=detailStore&storeName=쭈꾸미볶음집">
+                    <img class="img-responsive" src="${pageContext.request.contextPath }/menuImg/jo3.jpg" alt=""></a>
                 </div>
                 <div class="col-sm-4 text-center">
                     <img class="img-responsive" src="http://placehold.it/750x450" alt="">
