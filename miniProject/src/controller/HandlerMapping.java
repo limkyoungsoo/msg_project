@@ -17,6 +17,8 @@ public class HandlerMapping {
 			c = new StoreShowController();
 		}else if(command.equals("detailStore")){
 			c=new DetailStoreController();
+		}else if(command.equals("register")){
+			c=new RegisterController();
 		}
 
 		return c;

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <div class="registerInfo">
-	<a href="#"><font color="white">로그인</font></a> <a href="#"><font
+	<a href="#"><font color="white">로그인</font></a> <a href="DispatcherServlet/command=register"><font
 		color="white">회원가입</font></a>
 
 </div>
