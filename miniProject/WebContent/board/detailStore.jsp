@@ -51,51 +51,49 @@
 
 <body>
 
-<c:import url="/template/header.jsp"></c:import>
-   <c:import url="/template/navigator.jsp"></c:import>
+	<c:import url="/template/header.jsp"></c:import>
+	<c:import url="/template/navigator.jsp"></c:import>
 
 
 	<div class="container">
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">
-                        <strong>${requestScope.menuList.storeName}의 메뉴</strong>
-                    </h2>
-                    <hr>
-                </div>
-                <div class="col-md-6">
-                    <img class="img-responsive img-border-left" src="${pageContext.request.contextPath }/menuImg/jo3.jpg" alt="">
-                </div>
-                <div class="col-md-6">
-                    <p><strong>메뉴번호</strong>:${requestScope.menuList.menuVO.menuNo}</p>
-                    <p><strong>메뉴이름</strong>:${requestScope.menuList.menuVO.menuName}</p>
-                    <p><strong>메뉴가격</strong>:${requestScope.menuList.menuVO.menuPrice}</p>
-                    <p><strong>메뉴사진</strong>:${requestScope.menuList.menuVO.menuPic}</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-</div>
-		
-
-		<div class="container">
-			<jsp:include page="review.jsp" />
-		</div>
-		
-	<!-- /.container -->
-
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<p>Copyright &copy; Your Website 2014</p>
+		<div class="row">
+			<div class="box">
+				<div class="col-lg-12">
+					<hr>
+					<h2 class="intro-text text-center">
+						<strong>${requestScope.menuList.storeName}의 메뉴</strong>
+					</h2>
+					<hr>
 				</div>
+				<div class="col-md-6">
+					<img class="img-responsive img-border-left"
+						src="${pageContext.request.contextPath }/menuImg/jo3.jpg" alt="">
+				</div>
+				<div class="col-md-6">
+					<p>
+						<strong>메뉴번호</strong>:${requestScope.menuList.menuVO.menuNo}
+					</p>
+					<p>
+						<strong>메뉴이름</strong>:${requestScope.menuList.menuVO.menuName}
+					</p>
+					<p>
+						<strong>메뉴가격</strong>:${requestScope.menuList.menuVO.menuPrice}
+					</p>
+					<p>
+						<strong>메뉴사진</strong>:${requestScope.menuList.menuVO.menuPic}
+					</p>
+				</div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
-	</footer>
+	</div>
 
+
+	<div class="container">
+		<jsp:include page="review.jsp" />
+	</div>
+
+<c:import url="/template/footer.jsp"></c:import>
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
 
