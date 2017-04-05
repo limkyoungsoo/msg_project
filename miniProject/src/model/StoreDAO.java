@@ -44,6 +44,41 @@ public class StoreDAO {
 		}
 		return storeList;
 	}
+	// 강정호 제작
+	public StoreVO getStoreMenuList(String storeName) throws SQLException {
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		StoreVO storeVO=new StoreVO();
+		MenuVO menuVO=new MenuVO();
+		try{
+			con=getConnection();
+			String sql="select s.storeName, s.storeLoc, s.storeTel, s.storePic, s.openHour, "
+					+ "m.menuNo, m.menuName, m.menuPrice, m.menuPic  "
+					+ "from store s, menu m "
+					+ "where s.storeName=m.storeName and m.storeName=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, storeName);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				storeVO.setStoreName(rs.getString(1));
+				storeVO.setStoreLoc(rs.getString(2));
+				storeVO.setStoreTel(rs.getInt(3));
+				storeVO.setStorePic(rs.getString(4));
+				storeVO.setOpenHour(rs.getString(5));
+				//menuVO에 메뉴번호, 메뉴이름, 메뉴가격, 메뉴사진 저장 -강정호-
+				menuVO.setMenuNo(rs.getInt(6));
+				menuVO.setMenuName(rs.getString(7));
+				menuVO.setMenuPrice(rs.getInt(8));
+				menuVO.setMenuPic(rs.getString(9));
+				// menuVO를 다시 storeVO에 저장한다. -강정호-
+				storeVO.setMenuVO(menuVO);
+			}
+		}finally{
+			closeAll(rs,pstmt,con);
+		}
+		return storeVO;
+	}
 
 	public void closeAll(PreparedStatement pstmt, Connection con) throws SQLException {
 		if (pstmt != null)
@@ -57,4 +92,6 @@ public class StoreDAO {
 			rs.close();
 		closeAll(pstmt, con);
 	}
+
+	
 }
