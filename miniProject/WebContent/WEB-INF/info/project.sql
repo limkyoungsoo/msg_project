@@ -66,9 +66,9 @@ insert into store(storeName,storeLoc,storeTel,storePic,openHour)
 values('쭈꾸미볶음집','유스페이스1동',03112345678,'store.jpg','월요일~금요일 10시~8시');
 -- 위에 입력한 데이터 storeTel의 번호가 너무 길어서 '숫자 오버플로우' 라는 에러가 뜸
 -- 그래서 번호를 수정하려고 업데이트 하려고함. -강정호-
-update store set storeTel=031 where storeName='쭈꾸미볶음집';
 
 select * from store;
+
 select storePic from store
 
 insert into store(storeName,storeLoc,storeTel,storePic,openHour)
@@ -79,7 +79,7 @@ update store set storePic='/storeImg/cho1.jpg';
 insert into menu(menuNo,storeName,menuName,menuPrice,menuPic)
 values(menuNo_seq.nextval,'쭈꾸미볶음집','쭈꾸미불볶음',6000,'/dish.jpg');
 select * from menu;
-
+delete menu where storeName='쭈꾸미볶음집';
 insert into menuReview(reNo,menuNo,mId,review,grade,time_posted)
 values(reNo_seq.nextval,2,'java','음식이 맵지만 불맛이 살아있습니다',3,sysdate);
 select * from menuReview;
