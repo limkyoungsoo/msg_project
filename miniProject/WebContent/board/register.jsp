@@ -27,7 +27,7 @@
     <script type="text/javascript">
     $(document).ready(function(){
     	$("#checkBtn").click(function(){
-    		location.href = "${pageContext.request.contextPath}/DispatcherServlet/command=checkId";
+    		location.href = "${pageContext.request.contextPath}/DispatcherServlet?command=checkId";
 				alert('12345');
 		});
 	});
