@@ -5,8 +5,14 @@
 <html>
 <head>
 <c:import url="/template/straplink.html"></c:import>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".imgHover").on("click","img",function() {
+			alert("하잇");
+		});
+	});
+</script>
 </head>
-
 <body>
 	<c:import url="/template/header.jsp"></c:import>
 	<c:import url="/template/navigator.jsp"></c:import>
@@ -27,15 +33,15 @@
 						</ol>
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner">
-							<div class="item active">
+							<div class="item active imgHover" >
 								<img class="img-responsive img-border"
 									src="${pageContext.request.contextPath}/${list[0].storePic}"
 									alt="">
 							</div>
 							<c:forEach items="${list }" var="b" varStatus="order">
 								<c:if test="${order.count != 1 }">
-									<div class="item">
-										<img class="img-responsive img-border"
+									<div class="item imgHover">
+										<img class="img-responsive img-border imgHover"
 											src="${pageContext.request.contextPath}/${b.storePic }"
 											alt="">
 									</div>
